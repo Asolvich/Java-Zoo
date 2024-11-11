@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Подключаем внешний файл свойств -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:zoo-prop.properties"/>
+    </bean>
+
+    <!-- Bean для Lion с внедрением значений из файла свойств -->
+    <bean id="lion" class="org.example.Lion">
+        <constructor-arg value="${lion.name}" />
+        <constructor-arg value="${lion.age}" />
+        <constructor-arg value="${lion.gender}" />
+        <constructor-arg value="${lion.habitat}" />
+        <constructor-arg value="${lion.diet}" />
+        <constructor-arg value="${lion.speed}" />
+    </bean>
+
+    <!-- Bean для Elephant с внедрением значений из файла свойств -->
+    <bean id="Elephant" class="org.example.Elephant">
+        <constructor-arg value="${elephant.name}" />
+        <constructor-arg value="${elephant.age}" />
+        <constructor-arg value="${elephant.gender}" />
+        <constructor-arg value="${elephant.habitat}" />
+        <constructor-arg value="${elephant.diet}" />
+        <constructor-arg value="${elephant.weight}" />
+    </bean>
+
+    <!-- Bean для ZooKeeper с внедрением зависимости через конструктор -->
+    <bean id="zooKeeperForLion" class="org.example.ZooKeeper">
+        <constructor-arg ref="lion" />
+    </bean>
+
+    <bean id="zooKeeperForElephant" class="org.example.ZooKeeper">
+        <constructor-arg ref="Elephant" />
+    </bean>
+</beans>
