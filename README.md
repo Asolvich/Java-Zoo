@@ -1,8 +1,8 @@
 # Java-Zoo
-Java application for showing how Spring dependencies works.
+Java application for showing how Spring dependencies works (using XML file).
 
 ## Описание
-Простое Java приложение для демостарции работы с Spring зависимостями.
+Простое Java приложение для демостарции работы с Spring зависимостями (Используя XML файл).
 
 ## Сборка и запуск
 
@@ -19,7 +19,6 @@ Java application for showing how Spring dependencies works.
 mvn clean package
 ```
 
-### Запуск
 ### Запуск
 После выполнения команды откройте папку *target* и выполните команду:
 ```cmd
