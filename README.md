@@ -2,7 +2,7 @@
 Java application for showing how Spring dependencies works (using XML file).
 
 ## Описание
-Простое Java приложение для демостарции работы с Spring зависимостями (Используя XML файл).
+Простое Java приложение для демонстрации работы с Spring зависимостями (Используя XML файл).
 
 ## Сборка и запуск
 
